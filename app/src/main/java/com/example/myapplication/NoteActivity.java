@@ -47,8 +47,7 @@ public class NoteActivity extends AppCompatActivity {
         mModel.getAllNotes().observe(this, new Observer<List<Note>>() {
             @Override
             public void onChanged(@Nullable List<Note> notes) {
-                mAdapter.setData(notes);
-                mAdapter.notifyDataSetChanged();
+                mAdapter.submitList(notes);
             }
         });
 
